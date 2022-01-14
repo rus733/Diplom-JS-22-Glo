@@ -1,3 +1,4 @@
+'use strict';
 const modal = () => {
   //console.log('привет');
   const modalOverlay = document.querySelector('.modal-overlay');
