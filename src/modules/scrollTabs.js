@@ -1,6 +1,6 @@
 'use strict';
 const scrollTabs = () => {
-  console.log('HI');
+  //console.log('HI');
 
   const buttonsMenu = document.querySelectorAll("a[href^='#']");
 
@@ -12,16 +12,5 @@ const scrollTabs = () => {
       });
     });
   });
-  //btn.getAttribute('href');
-  /*
-  let count = 1;
-  buttonsMenu.forEach((btn) => {
-    btn.getAttribute('href');
-    console.log(`${count} ${btn.getAttribute('href')}`);
-    console.log(buttonsMenu);
-    console.log('*******************');
-    count++;
-  });
-  */
 };
 export default scrollTabs;
