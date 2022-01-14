@@ -16,7 +16,7 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n\r\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_scrollTabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scrollTabs */ \"./modules/scrollTabs.js\");\n\r\n\r\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_scrollTabs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
@@ -27,6 +27,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\nconst modal = () => {\r\n  //console.log('привет');\r\n  const modalOverlay = document.querySelector('.modal-overlay');\r\n  const callBtn = document.querySelectorAll('.callback-btn'); //\r\n  const openModal = document.getElementById('callback');\r\n  //console.log(openModal);\r\n\r\n  callBtn.forEach((btn) => {\r\n    //console.log(btn);\r\n    btn.addEventListener('click', () => {\r\n      modalOverlay.style.display = 'flex';\r\n      openModal.style.display = 'flex';\r\n    });\r\n  });\r\n\r\n  document.addEventListener('click', (e) => {\r\n    if (e.target.closest('.modal-overlay') || e.target.closest('.modal-close')) {\r\n      modalOverlay.style.display = 'none';\r\n      openModal.style.display = 'none';\r\n    }\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\r\n\n\n//# sourceURL=webpack:///./modules/modal.js?");
+
+/***/ }),
+
+/***/ "./modules/scrollTabs.js":
+/*!*******************************!*\
+  !*** ./modules/scrollTabs.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\nconst scrollTabs = () => {\r\n  console.log('HI');\r\n\r\n  const buttonsMenu = document.querySelectorAll(\"a[href^='#']\");\r\n\r\n  buttonsMenu.forEach((btn) => {\r\n    btn.addEventListener('click', (e) => {\r\n      e.preventDefault();\r\n      document.querySelector(e.target.getAttribute('href')).scrollIntoView({\r\n        behavior: 'smooth',\r\n      });\r\n    });\r\n  });\r\n  //btn.getAttribute('href');\r\n  /*\r\n  let count = 1;\r\n  buttonsMenu.forEach((btn) => {\r\n    btn.getAttribute('href');\r\n    console.log(`${count} ${btn.getAttribute('href')}`);\r\n    console.log(buttonsMenu);\r\n    console.log('*******************');\r\n    count++;\r\n  });\r\n  */\r\n};\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (scrollTabs);\r\n\n\n//# sourceURL=webpack:///./modules/scrollTabs.js?");
 
 /***/ })
 
