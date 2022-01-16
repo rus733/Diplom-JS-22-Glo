@@ -3,26 +3,27 @@
 const slider = () => {
   const sliderBlock = document.querySelector('.top-slider'),
     sliderDot = document.querySelector('.slider-dots'),
-    //slides = document.querySelectorAll('.item'),
-    slides = document.getElementsByClassName('item'),
+    slides = document.querySelectorAll('.item'),
+    //slides = document.getElementsByClassName('item'),
     //cells = document.querySelectorAll('.table-cell'),
-    dot = document.querySelectorAll('.dot'),
+    dots = document.querySelectorAll('.dot'),
     timeInterval = 3000;
 
   let currentSlide = 0;
   let interval;
   //let dots;
-  /*
+
   const createDots = () => {
     slides.forEach(() => {
-      const dot = document.createElement('li');
-      dot.classList.add('dot'); //'dot',
-      sliderDot.append(dot); //
+      const addedDot = document.createElement('li');
+      //const dot = document.createElement('li');
+      addedDot.classList.add('dot'); //'dot',
+      sliderDot.append(addedDot); //
     });
-    dots = document.querySelectorAll('.dot'); //'dot',
+    let dots = document.querySelectorAll('.dot'); //'dot',
     dots[currentSlide].classList.add('dot-active');
   };
-*/
+
   const prevSlide = (elems, index, className) => {
     elems[index].classList.remove(className);
   };
@@ -32,14 +33,15 @@ const slider = () => {
   };
 
   const autoSlide = () => {
+    let dots = document.querySelectorAll('.dot'); ////
     prevSlide(slides, currentSlide, 'slide-active');
-    //prevSlide(dot, currentSlide, 'dot-active');
+    prevSlide(dots, currentSlide, 'dot-active');
     currentSlide++;
     if (currentSlide >= slides.length) {
       currentSlide = 0;
     }
     nextSlide(slides, currentSlide, 'slide-active');
-    //nextSlide(dot, currentSlide, 'dot-active');
+    nextSlide(dots, currentSlide, 'dot-active');
   };
 
   const startSlide = (timer = 3000) => {
@@ -53,15 +55,17 @@ const slider = () => {
   sliderBlock.addEventListener('click', (e) => {
     e.preventDefault();
 
+    let dots = document.querySelectorAll('.dot');
+
     if (!e.target.matches('.dot, .slider-dots')) {
       return;
     }
 
     prevSlide(slides, currentSlide, 'slide-active');
-    //prevSlide(dot, currentSlide, 'dot-active');
+    prevSlide(dots, currentSlide, 'dot-active');
 
     if (e.target.matches('.dot')) {
-      dot.forEach((elem, index) => {
+      dots.forEach((elem, index) => {
         if (elem === e.target) {
           currentSlide = index;
         }
@@ -76,7 +80,7 @@ const slider = () => {
     }
 
     nextSlide(slides, currentSlide, 'slide-active');
-    //nextSlide(dot, currentSlide, 'dot-active');
+    nextSlide(dots, currentSlide, 'dot-active');
   });
 
   sliderBlock.addEventListener(
@@ -98,8 +102,7 @@ const slider = () => {
     },
     true
   );
-  //createDots();
-
+  createDots();
   startSlide(timeInterval);
 };
 
