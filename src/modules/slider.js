@@ -4,23 +4,19 @@ const slider = () => {
   const sliderBlock = document.querySelector('.top-slider'),
     sliderDot = document.querySelector('.slider-dots'),
     slides = document.querySelectorAll('.item'),
-    //slides = document.getElementsByClassName('item'),
-    //cells = document.querySelectorAll('.table-cell'),
     dots = document.querySelectorAll('.dot'),
     timeInterval = 3000;
 
   let currentSlide = 0;
   let interval;
-  //let dots;
 
   const createDots = () => {
     slides.forEach(() => {
       const addedDot = document.createElement('li');
-      //const dot = document.createElement('li');
-      addedDot.classList.add('dot'); //'dot',
+      addedDot.classList.add('dot'); //
       sliderDot.append(addedDot); //
     });
-    let dots = document.querySelectorAll('.dot'); //'dot',
+    let dots = document.querySelectorAll('.dot'); //
     dots[currentSlide].classList.add('dot-active');
   };
 
@@ -33,7 +29,7 @@ const slider = () => {
   };
 
   const autoSlide = () => {
-    let dots = document.querySelectorAll('.dot'); ////
+    let dots = document.querySelectorAll('.dot');
     prevSlide(slides, currentSlide, 'slide-active');
     prevSlide(dots, currentSlide, 'dot-active');
     currentSlide++;
