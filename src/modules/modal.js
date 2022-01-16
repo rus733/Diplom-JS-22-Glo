@@ -4,8 +4,8 @@ const modal = () => {
   const openModal = document.getElementById('callback');
 
   callBtn.forEach((btn) => {
-    //console.log(btn);
     btn.addEventListener('click', () => {
+      e.preventDefault();
       modalOverlay.style.display = 'flex';
       openModal.style.display = 'flex';
     });
