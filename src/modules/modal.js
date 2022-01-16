@@ -1,14 +1,12 @@
 'use strict';
 const modal = () => {
-  //console.log('привет');
   const modalOverlay = document.querySelector('.modal-overlay');
   const callBtn = document.querySelectorAll('.callback-btn'); //
   const openModal = document.getElementById('callback');
-  //console.log(openModal);
 
   callBtn.forEach((btn) => {
-    //console.log(btn);
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
       modalOverlay.style.display = 'flex';
       openModal.style.display = 'flex';
     });
