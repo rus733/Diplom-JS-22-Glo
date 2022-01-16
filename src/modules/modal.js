@@ -10,7 +10,7 @@ const modal = () => {
     carouselElem = document.querySelectorAll('.absolute');
 
   callBtn.forEach((btn) => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
       modalOpen.style.display = 'flex';
       modalOverlay.style.display = 'flex';
@@ -18,7 +18,8 @@ const modal = () => {
     });
   });
 
-  findService.addEventListener('click', () => {
+  findService.addEventListener('click', (e) => {
+    e.preventDefault();
     modalOpen.style.display = 'flex';
     modalOverlay.style.display = 'flex';
     blockBody();
