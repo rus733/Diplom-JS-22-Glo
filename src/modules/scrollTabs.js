@@ -1,9 +1,7 @@
 'use strict';
 const scrollTabs = () => {
   //console.log('HI');
-
   const buttonsMenu = document.querySelectorAll("a[href^='#']");
-
   buttonsMenu.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
