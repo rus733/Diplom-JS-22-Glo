@@ -11,6 +11,7 @@ const modal = () => {
 
   callBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
+      e.preventDefault();
       modalOpen.style.display = 'flex';
       modalOverlay.style.display = 'flex';
       blockBody();

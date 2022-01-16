@@ -30,13 +30,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./modules/helpers.js":
+/*!****************************!*\
+  !*** ./modules/helpers.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"blockBody\": () => (/* binding */ blockBody),\n/* harmony export */   \"unBlockBody\": () => (/* binding */ unBlockBody),\n/* harmony export */   \"calcScroll\": () => (/* binding */ calcScroll)\n/* harmony export */ });\nconst blockBody = () => {\r\n  const body = document.body;\r\n  body.style.overflow = 'hidden';\r\n  const bodyScroll = calcScroll();\r\n  body.style.marginRight = `${bodyScroll}px`;\r\n};\r\n\r\nconst unBlockBody = () => {\r\n  const body = document.body;\r\n  body.style.overflow = 'auto';\r\n  body.style.marginRight = `0`;\r\n};\r\n\r\nfunction calcScroll() {\r\n  let div = document.createElement('div');\r\n  div.style.width = '500px';\r\n  div.style.height = '500px';\r\n  div.style.overflowY = 'scroll';\r\n  div.style.visibility = 'hidden';\r\n  document.body.appendChild(div);\r\n  let scrollWidth = div.offsetWidth - div.clientWidth;\r\n  div.remove();\r\n  return scrollWidth;\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./modules/helpers.js?");
+
+/***/ }),
+
 /***/ "./modules/modal.js":
 /*!**************************!*\
   !*** ./modules/modal.js ***!
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n\r\n\r\nconst modal = () => {\r\n  const modalOverlay = document.querySelector('.modal-overlay');\r\n  const callBtn = document.querySelectorAll('.callback-btn'); //\r\n  const openModal = document.getElementById('callback');\r\n\r\n  callBtn.forEach((btn) => {\r\n    btn.addEventListener('click', (e) => {\r\n      e.preventDefault();\r\n      modalOverlay.style.display = 'flex';\r\n      openModal.style.display = 'flex';\r\n    });\r\n  });\r\n\r\n  document.addEventListener('click', (e) => {\r\n    if (e.target.closest('.modal-overlay') || e.target.closest('.modal-close')) {\r\n      modalOverlay.style.display = 'none';\r\n      openModal.style.display = 'none';\r\n    }\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\r\n\n\n//# sourceURL=webpack:///./modules/modal.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers */ \"./modules/helpers.js\");\n\r\n\r\n\r\n\r\nconst modal = () => {\r\n  const modalOpen = document.getElementById('callback'),\r\n    modalOverlay = document.querySelector('.modal-overlay'),\r\n    callBtn = document.querySelectorAll('.callback-btn'),\r\n    findService = document.querySelector('.button-services'),\r\n    carouselElem = document.querySelectorAll('.absolute');\r\n\r\n  callBtn.forEach((btn) => {\r\n    btn.addEventListener('click', () => {\r\n      e.preventDefault();\r\n      modalOpen.style.display = 'flex';\r\n      modalOverlay.style.display = 'flex';\r\n      (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.blockBody)();\r\n    });\r\n  });\r\n\r\n  findService.addEventListener('click', () => {\r\n    modalOpen.style.display = 'flex';\r\n    modalOverlay.style.display = 'flex';\r\n    (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.blockBody)();\r\n  });\r\n\r\n  carouselElem.forEach((elem) => {\r\n    elem.addEventListener('click', () => {\r\n      modalOpen.style.display = 'flex';\r\n      modalOverlay.style.display = 'flex';\r\n      (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.blockBody)();\r\n    });\r\n  });\r\n\r\n  document.addEventListener('click', (e) => {\r\n    if (e.target.classList.contains('modal-overlay') || e.target.closest('.modal-close')) {\r\n      modalOpen.style.display = 'none';\r\n      modalOverlay.style.display = 'none';\r\n      (0,_helpers__WEBPACK_IMPORTED_MODULE_0__.unBlockBody)();\r\n    }\r\n  });\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);\r\n\n\n//# sourceURL=webpack:///./modules/modal.js?");
 
 /***/ }),
 
