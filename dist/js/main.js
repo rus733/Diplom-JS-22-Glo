@@ -16,7 +16,17 @@
   \******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_scrollTabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scrollTabs */ \"./modules/scrollTabs.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ \"./modules/slider.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_scrollTabs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ \"./modules/modal.js\");\n/* harmony import */ var _modules_scrollTabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/scrollTabs */ \"./modules/scrollTabs.js\");\n/* harmony import */ var _modules_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/slider */ \"./modules/slider.js\");\n/* harmony import */ var _modules_carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/carousel */ \"./modules/carousel.js\");\n\r\n\r\n\r\n\r\n\r\n\r\n(0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_scrollTabs__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n(0,_modules_slider__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(); //carousel\r\n(0,_modules_carousel__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
+/***/ "./modules/carousel.js":
+/*!*****************************!*\
+  !*** ./modules/carousel.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst carousel = () => {\r\n  let serviceCarousel = document.getElementsByClassName('services-carousel'),\r\n    arrowLeft = document.querySelector('.arrow-left'),\r\n    arrowRight = document.querySelector('.arrow-right'),\r\n    current = 0;\r\n\r\n  // Clear all images\r\n  function reset() {\r\n    for (let i = 0; i < serviceCarousel.length; i++) {\r\n      serviceCarousel[i].style.display = 'none';\r\n    }\r\n  }\r\n\r\n  // Initial slide\r\n  function startSlide() {\r\n    reset();\r\n    serviceCarousel[0].style.display = 'block';\r\n  }\r\n\r\n  // Show previous\r\n  function slideLeft() {\r\n    reset();\r\n    serviceCarousel[current - 1].style.display = 'block';\r\n    current--;\r\n  }\r\n\r\n  // Show next\r\n  function slideRight() {\r\n    reset();\r\n    serviceCarousel[current + 1].style.display = 'block';\r\n    current++;\r\n  }\r\n\r\n  // Left arrow click\r\n  arrowLeft.addEventListener('click', function () {\r\n    if (current === 0) {\r\n      current = serviceCarousel.length;\r\n    }\r\n    slideLeft();\r\n  });\r\n\r\n  // Right arrow click\r\n  arrowRight.addEventListener('click', function () {\r\n    if (current === serviceCarousel.length - 1) {\r\n      current = -1;\r\n    }\r\n    slideRight();\r\n  });\r\n\r\n  startSlide();\r\n};\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (carousel);\r\n\n\n//# sourceURL=webpack:///./modules/carousel.js?");
 
 /***/ }),
 
