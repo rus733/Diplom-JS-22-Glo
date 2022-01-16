@@ -7,12 +7,11 @@ const slider = () => {
     slides = document.getElementsByClassName('item'),
     //cells = document.querySelectorAll('.table-cell'),
     dot = document.querySelectorAll('.dot'),
-    timeInterval = 2000;
+    timeInterval = 3000;
 
   let currentSlide = 0;
   let interval;
   //let dots;
-
   /*
   const createDots = () => {
     slides.forEach(() => {
@@ -34,13 +33,13 @@ const slider = () => {
 
   const autoSlide = () => {
     prevSlide(slides, currentSlide, 'slide-active');
-    prevSlide(dot, currentSlide, 'dot-active');
+    //prevSlide(dot, currentSlide, 'dot-active');
     currentSlide++;
     if (currentSlide >= slides.length) {
       currentSlide = 0;
     }
     nextSlide(slides, currentSlide, 'slide-active');
-    nextSlide(dot, currentSlide, 'dot-active');
+    //nextSlide(dot, currentSlide, 'dot-active');
   };
 
   const startSlide = (timer = 3000) => {
@@ -59,7 +58,7 @@ const slider = () => {
     }
 
     prevSlide(slides, currentSlide, 'slide-active');
-    prevSlide(dot, currentSlide, 'dot-active');
+    //prevSlide(dot, currentSlide, 'dot-active');
 
     if (e.target.matches('.dot')) {
       dot.forEach((elem, index) => {
@@ -77,7 +76,7 @@ const slider = () => {
     }
 
     nextSlide(slides, currentSlide, 'slide-active');
-    nextSlide(dot, currentSlide, 'dot-active');
+    //nextSlide(dot, currentSlide, 'dot-active');
   });
 
   sliderBlock.addEventListener(
@@ -100,7 +99,6 @@ const slider = () => {
     true
   );
   //createDots();
-  //autoSlide();
 
   startSlide(timeInterval);
 };
