@@ -21,8 +21,8 @@
     />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- STYLESHEETS :: TEMPLATE -->
-    <link href="css/style.css" rel="stylesheet" />
-    <script src="./dist/js/main.js" defer></script>
+    <link href="/css/style.css" rel="stylesheet" />
+    <script src="dist/js/main.js" defer></script>
   </head>
 
   <body>
@@ -84,7 +84,7 @@
 
       <!-- * * * * * * Top slider * * * * * * -->
       <div class="top-slider white text-center relative">
-        <div class="item relative slide-active" style="background: url(images/slide1.jpg) 50% 50% no-repeat; background-size: cover">
+        <div class="item relative" style="background: url(images/slide1.jpg) 50% 50% no-repeat; background-size: cover">
           <div class="table">
             <div class="table-cell">
               <div class="container">
@@ -110,7 +110,7 @@
             </div>
           </div>
         </div>
-        <div class="item relative" style="background: url(images/slide3.jpg) 50% 50% no-repeat; background-size: cover">
+        <div class="item relative" style="background: url(./images/slide3.jpg) 50% 50% no-repeat; background-size: cover">
           <div class="table">
             <div class="table-cell">
               <div class="container">
@@ -123,8 +123,13 @@
             </div>
           </div>
         </div>
-        <ul class="slider-dots"></ul>
+        <ul class="slider-dots">
+          <li class="dot"></li>
+          <li class="dot"></li>
+          <li class="dot"></li>
+        </ul>
       </div>
+
       <!-- * * * * * * Top slider: end * * * * * * -->
 
       <!-- * * * * * * Services section * * * * * * -->
@@ -183,8 +188,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="row services-carousel">
               <div class="col-sm-6 col-md-4">
                 <div class="element relative">
                   <a class="absolute fancyboxModal" href="#application" data-application="Замена электросчетчика"></a>
@@ -422,9 +425,9 @@
           <div class="row">
             <div class="col-md-8 col-md-offset-2">
               <div class="accordeon">
-                <div class="element">
+                <div class="element active">
                   <div class="title">Как построена ваша работа?</div>
-                  <div class="element-content acc-section">
+                  <div class="element-content">
                     С другой стороны дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем
                     массового участия. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности способствует подготовки и
                     реализации модели развития
@@ -432,7 +435,7 @@
                 </div>
                 <div class="element">
                   <div class="title">Заключаете ли вы договор?</div>
-                  <div class="element-content acc-section">
+                  <div class="element-content">
                     С другой стороны дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем
                     массового участия. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности способствует подготовки и
                     реализации модели развития
@@ -440,7 +443,7 @@
                 </div>
                 <div class="element">
                   <div class="title">Какие материалы вы используете?</div>
-                  <div class="element-content acc-section">
+                  <div class="element-content">
                     С другой стороны дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем
                     массового участия. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности способствует подготовки и
                     реализации модели развития
@@ -448,7 +451,7 @@
                 </div>
                 <div class="element">
                   <div class="title">Даете ли вы гарантию и на сколько?</div>
-                  <div class="element-content acc-section">
+                  <div class="element-content">
                     С другой стороны дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем
                     массового участия. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности способствует подготовки и
                     реализации модели развития
@@ -470,27 +473,21 @@
           <div class="row">
             <div class="col-sm-4">
               <div class="element element1">
-                <div class="icon hidden-sm">
-                  <img src="images/address-icon.png" />
-                </div>
+                <div class="icon hidden-sm"><img src="images/address-icon.png" /></div>
                 г. Ваш город, <br />
                 ул. Ленина д. 3, офис 302
               </div>
             </div>
             <div class="col-sm-4">
               <div class="element element2">
-                <div class="icon hidden-sm">
-                  <img src="images/tel-icon.png" />
-                </div>
+                <div class="icon hidden-sm"><img src="images/tel-icon.png" /></div>
                 Тел.: 8 (987) 654-32-10<br />
                 E-mail: info@sitename.com
               </div>
             </div>
             <div class="col-sm-4">
               <div class="element element3">
-                <div class="icon hidden-sm">
-                  <img src="images/clock-icon.png" />
-                </div>
+                <div class="icon hidden-sm"><img src="images/clock-icon.png" /></div>
                 пн–сб: 11:00–20:00<br />
                 вс: выходной
               </div>
@@ -514,11 +511,7 @@
               }),
               myPlacemark = new ymaps.Placemark(
                 [44.84373337182117, 37.65565927116387], // координаты маркера
-                {
-                  iconContent: '',
-                  balloonContentBody: 'г. Ваш город, Проспект Дзержинского д. 211',
-                  balloonContentHeader: '',
-                }, // контент маркера
+                { iconContent: '', balloonContentBody: 'г. Ваш город, Проспект Дзержинского д. 211', balloonContentHeader: '' }, // контент маркера
                 {
                   // Опции.
                   // Необходимо указать данный тип макета.
@@ -544,10 +537,7 @@
 
     <!-- * * * * * * Footer * * * * * * -->
     <div class="footer-wrapper">
-      <div class="container text-center f13">
-        © 2018. Шаблон сайта электрика. Разработано в
-        <a href="http://collary.ru">collary.ru</a>
-      </div>
+      <div class="container text-center f13">© 2018. Шаблон сайта электрика. Разработано в <a href="http://collary.ru">collary.ru</a></div>
     </div>
     <!-- * * * * * * Footer: end * * * * * * -->
 
@@ -562,16 +552,13 @@
       <div class="rf">
         <form action="" name="form-callback">
           <div class="form-group">
-            <input type="text" name="fio" class="form-control" placeholder="Ваше имя" required />
+            <input type="text" name="fio" class="form-control" placeholder="Ваше имя" />
           </div>
 
           <div class="form-group">
-            <input type="text" name="tel" class="form-control tel required" placeholder="Телефон*" required />
+            <input type="text" name="tel" class="form-control tel required" placeholder="Телефон*" />
           </div>
-          <p>
-            <span class="red">*</span>
-            <span class="f12">- поля, обязательные для заполнения</span>
-          </p>
+          <p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
           <div>
             <input type="submit" class="button btn feedback" value="Отправить" />
           </div>
@@ -598,10 +585,7 @@
             <textarea name="message" class="form-control required" placeholder="Сообщение*"></textarea>
           </div>
 
-          <p>
-            <span class="red">*</span>
-            <span class="f12">- поля, обязательные для заполнения</span>
-          </p>
+          <p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
           <div>
             <input type="submit" class="button btn feedback" value="Отправить" />
           </div>
@@ -625,10 +609,7 @@
           <div class="form-group">
             <input name="tel" type="text" class="form-control required tel" placeholder="Ваш  телефон *" />
           </div>
-          <p>
-            <span class="red">*</span>
-            <span class="f12">- поля, обязательные для заполнения</span>
-          </p>
+          <p><span class="red">*</span> <span class="f12">- поля, обязательные для заполнения</span></p>
           <div>
             <input type="submit" class="button btn feedback" value="Отправить" />
           </div>
