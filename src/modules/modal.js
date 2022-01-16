@@ -1,22 +1,41 @@
 'use strict';
 
+import { blockBody, unBlockBody } from './helpers';
+
 const modal = () => {
-  const modalOverlay = document.querySelector('.modal-overlay');
-  const callBtn = document.querySelectorAll('.callback-btn'); //
-  const openModal = document.getElementById('callback');
+  const modalOpen = document.getElementById('callback'),
+    modalOverlay = document.querySelector('.modal-overlay'),
+    callBtn = document.querySelectorAll('.callback-btn'),
+    findService = document.querySelector('.button-services'),
+    carouselElem = document.querySelectorAll('.absolute');
 
   callBtn.forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
+    btn.addEventListener('click', () => {
+      modalOpen.style.display = 'flex';
       modalOverlay.style.display = 'flex';
-      openModal.style.display = 'flex';
+      blockBody();
+    });
+  });
+
+  findService.addEventListener('click', () => {
+    modalOpen.style.display = 'flex';
+    modalOverlay.style.display = 'flex';
+    blockBody();
+  });
+
+  carouselElem.forEach((elem) => {
+    elem.addEventListener('click', () => {
+      modalOpen.style.display = 'flex';
+      modalOverlay.style.display = 'flex';
+      blockBody();
     });
   });
 
   document.addEventListener('click', (e) => {
-    if (e.target.closest('.modal-overlay') || e.target.closest('.modal-close')) {
+    if (e.target.classList.contains('modal-overlay') || e.target.closest('.modal-close')) {
+      modalOpen.style.display = 'none';
       modalOverlay.style.display = 'none';
-      openModal.style.display = 'none';
+      unBlockBody();
     }
   });
 };
