@@ -1,4 +1,5 @@
 'use strict';
+
 const modal = () => {
   const modalOverlay = document.querySelector('.modal-overlay');
   const callBtn = document.querySelectorAll('.callback-btn'); //
