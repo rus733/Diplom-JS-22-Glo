@@ -1,53 +1,34 @@
+'use strict';
+
+import Swiper from 'swiper';
+
 const carousel = () => {
-  let serviceCarousel = document.getElementsByClassName('services-carousel'),
-    arrowLeft = document.querySelector('.arrow-left'),
-    arrowRight = document.querySelector('.arrow-right'),
-    current = 0;
+  //console.log('carousel');
 
-  // Clear all images
-  function reset() {
-    for (let i = 0; i < serviceCarousel.length; i++) {
-      serviceCarousel[i].style.display = 'none';
-    }
-  }
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 10,
 
-  // Initial slide
-  function startSlide() {
-    reset();
-    serviceCarousel[0].style.display = 'block';
-  }
-
-  // Show previous
-  function slideLeft() {
-    reset();
-    serviceCarousel[current - 1].style.display = 'block';
-    current--;
-  }
-
-  // Show next
-  function slideRight() {
-    reset();
-    serviceCarousel[current + 1].style.display = 'block';
-    current++;
-  }
-
-  // Left arrow click
-  arrowLeft.addEventListener('click', function () {
-    if (current === 0) {
-      current = serviceCarousel.length;
-    }
-    slideLeft();
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      },
+    },
+    navigation: {
+      nextEl: '.arrow-right', //arrow-left
+      prevEl: '.arrow-left',
+    },
   });
-
-  // Right arrow click
-  arrowRight.addEventListener('click', function () {
-    if (current === serviceCarousel.length - 1) {
-      current = -1;
-    }
-    slideRight();
-  });
-
-  startSlide();
 };
 
 export default carousel;

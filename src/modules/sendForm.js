@@ -82,6 +82,7 @@ const sendForm = () => {
             document.querySelector('.modal-callback').style.display = 'none';
             document.querySelector('.modal-overlay').style.display = 'none';
             unBlockBody();
+            statusMessage.textContent = '';
           }, 3500);
         })
         .catch((error) => {
