@@ -1117,7 +1117,6 @@ div.element-content.faq {
 /**** services section *****/
 
 .services-arrow {
-  position: relative;
   display: flex;
   justify-content: center;
 }

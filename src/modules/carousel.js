@@ -1,14 +1,18 @@
 'use strict';
 
-import Swiper from 'swiper';
+//import Swiper from 'swiper';
 
 const carousel = () => {
   //console.log('carousel');
 
   const swiper = new Swiper('.swiper', {
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 10,
+    //loop: true,
+    navigation: {
+      nextEl: '.arrow-right', //arrow-left
+      prevEl: '.arrow-left',
+    },
+    //slidesPerView: 1,
+    //spaceBetween: 10,
 
     breakpoints: {
       640: {
@@ -23,10 +27,6 @@ const carousel = () => {
         slidesPerView: 3,
         spaceBetween: 50,
       },
-    },
-    navigation: {
-      nextEl: '.arrow-right', //arrow-left
-      prevEl: '.arrow-left',
     },
   });
 };
