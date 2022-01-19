@@ -1,28 +1,21 @@
 'use strict';
 
 const accordion = () => {
-  let accordion = document.querySelectorAll('.accordeon>.element'),
-    elementContent = document.querySelectorAll('.acc-section'),
-    i;
+  const accordionSection = document.querySelector('.accordeon'),
+    accordionElems = accordionSection.querySelectorAll('.element'),
+    titleAcc = accordionSection.querySelectorAll('.title');
 
-  for (i = 0; i < accordion.length; i++) {
-    accordion[i].onclick = function () {
-      hideAll();
+  accordionSection.addEventListener('click', (event) => {
+    const target = event.target;
 
-      this.classList.toggle('active');
-      let blocks = this.children;
-      Array.from(blocks).forEach((em) => {
-        em.classList.toggle('faq');
-      });
-    };
-  }
-
-  function hideAll() {
-    for (i = 0; i < accordion.length; i++) {
-      accordion[i].classList.toggle('active', false);
-      elementContent[i].classList.toggle('faq', false);
-    }
-  }
+    titleAcc.forEach((item, index) => {
+      if (target === item) {
+        accordionElems[index].classList.toggle('active');
+      } else {
+        accordionElems[index].classList.remove('active');
+      }
+    });
+  });
 };
 
 export default accordion;
