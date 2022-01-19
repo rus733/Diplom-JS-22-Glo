@@ -3,19 +3,6 @@
 import { unBlockBody } from './helpers';
 
 const sendForm = () => {
-  /*
-  const sendData = async (data) => {
-    const res = await fetch('server.php', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    return await res.json();
-  };
-  */
-
   const sendData = (data) => {
     return fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',

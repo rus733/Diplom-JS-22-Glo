@@ -5,16 +5,14 @@
 const carousel = () => {
   const arrowBlock = document.querySelector('.services-arrow');
   const prevArrow = arrowBlock.querySelector('.arrow-left');
-  const nextArrow = arrowBlock.querySelector('.arrow-right'); //swiper-button-disabled
-  //console.log(arrowBlock);
-  //console.log(prevArrow);
-  //console.log(nextArrow);
+  const nextArrow = arrowBlock.querySelector('.arrow-right');
+
   prevArrow.classList.add('disabled');
 
   const swiper = new Swiper('.swiper', {
     //loop: true,
     navigation: {
-      nextEl: '.arrow-right', //arrow-left
+      nextEl: '.arrow-right',
       prevEl: '.arrow-left',
     },
     //slidesPerView: 1,
@@ -35,16 +33,6 @@ const carousel = () => {
       },
     },
   });
-  /*
-  if (nextArrow.closest('.swiper-button-disabled')) {
-    console.log('right');
-  } //swiper-button-disabled
-
-  if (prevArrow.closest('.swiper-button-disabled')) {
-    console.log('left');
-    prevArrow.classList.add('disabled');
-  }
-  */
 };
 
 export default carousel;

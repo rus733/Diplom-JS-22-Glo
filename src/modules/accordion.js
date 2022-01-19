@@ -5,11 +5,7 @@ const accordion = () => {
     elementContent = document.querySelectorAll('.acc-section'),
     i;
 
-  console.log(accordion);
-  console.log(elementContent);
-
   for (i = 0; i < accordion.length; i++) {
-    //accordion[0].classList.toggle('active');
     accordion[i].onclick = function () {
       hideAll();
 
