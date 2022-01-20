@@ -1136,7 +1136,15 @@ div.element-content.faq {
 .arrow-right {
   margin-left: 20px;
 }
+/* */
+.arrow-right.disabled {
+  opacity: 0.5;
+}
 
+.arrow-left.disabled {
+  opacity: 0.5;
+}
+/* */
 .services-section .element {
   margin-bottom: 20px;
 }

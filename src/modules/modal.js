@@ -17,7 +17,7 @@ const modal = () => {
       blockBody();
     });
   });
-  //
+
   findService.addEventListener('click', (e) => {
     e.preventDefault();
     modalOpen.style.display = 'flex';

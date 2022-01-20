@@ -10,7 +10,6 @@ const sendForm = () => {
       headers: { 'Content-Type': 'application/json' },
     });
   };
-  //https://jsonplaceholder.typicode.com/posts
 
   const submitForm = (form) => {
     const statusMessage = document.createElement('div');
